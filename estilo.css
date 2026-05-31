@@ -1,3 +1,158 @@
+/*=================
+SECTION HERO (PRINCIPAL)
+===================*/
+.site-main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: none;
+    letter-spacing: normal;
+    color: #e0e0e0;
+}
+
+.contenedor-principal {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.introduccion h2 {
+    color: #5aa9ff;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.introduccion p {
+    font-size: 1.1rem;
+    color: #d6d6d6;
+    line-height: 1.8;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilo “wiki”: barra global + local unificadas */
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.65rem;
+    width: 100%;
+    max-width: min(42rem, 100%);
+    margin: 1.25rem auto 0 auto;
+}
+
+.search-box--local {
+    margin-top: 0.35rem;
+}
+
+#globalSearch,
+#localSearch {
+    flex: 1 1 14rem;
+    min-width: 0;
+    min-height: 48px;
+    padding: 0.75rem 1.15rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(0, 0, 0, 0.45);
+    color: #f4f4f4;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+#globalSearch::placeholder,
+#localSearch::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+#globalSearch:hover,
+#localSearch:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.55);
+}
+
+#globalSearch:focus,
+#localSearch:focus {
+    border-color: rgba(74, 158, 255, 0.85);
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.35);
+}
+
+.search-box--hero .search-btn {
+    border-radius: 999px;
+    padding: 0.75rem 1.35rem;
+    align-self: center;
+}
+
+.search-box--hero {
+    align-items: center;
+}
+
+.local-search-container {
+    max-width: min(36rem, 100%);
+    margin-inline: auto;
+}
+
+.local-search-label {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+    color: #cfcfcf;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+/* Solo el título del hero lleva estilo marcado; sin brillo neón en el resto */
+.hero-section {
+    color: #fff;
+}
+
+.hero-section .hero-title {
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+}
+
+.hero-section .hero-tagline {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.65);
+    max-width: 36rem;
+    margin: 0;
+}
+
+/* Tarjetas: lectura normal (sin resplandor heredado) */
+#content .card h2,
+#content .card p,
+#content .card h3 {
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+/*==================
+TARJETAS DE HISTORIA
+====================*/
+
 *,
 *::before,
 *::after {
@@ -24,10 +179,9 @@ header{
     color: #f0f0f0;
 }
 
-header h1 {
+header.hero-section .hero-title {
     margin: 0 0 1rem 0;
     font-size: clamp(1.75rem, 4vw, 2.5rem);
-    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
 }
 
 .search-container {
@@ -84,12 +238,19 @@ header h1 {
 
 .card{
     background-color: #1a1a1a;
-    margin: 16px auto;
+    margin: 16px auto 20px;
     padding: clamp(18px, 3vw, 28px);
     width: min(96%, 1100px);
     max-width: 1100px;
     border-left: 5px solid #0056b3;
+    line-height: 1.6;
     transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-left-color: #4a9eff;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
 .card-image {
@@ -313,4 +474,19 @@ footer {
     font-size: 0.8em;
     color: #666;
 }
-
+@media(max-width:768px){
+    body{
+        padding:10px;/*Menos espacio en los bordes para ganar lugar*/
+    }
+    h1{
+        font-size: 1.8rem;/*achicamos un poco los titulos que no cupen toda la pantalla*/
+    }
+    .algunas_canciones{
+        padding:15px;/*ajustamos los contenedores azules*/
+    }
+    img{
+        width: 100%;/*La imagen ocupa todo el ancho disponible*/
+        height: auto;/*se ajusta el alutra automaticamente para no estirarse*/
+        max-width: 400px;/*pero que no crezca demasiado si el celular es grande*/
+    }
+}
